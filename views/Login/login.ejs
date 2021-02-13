@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%= title %></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/stylesheets/login.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="login-form">
+                <h1>Welcome</h1>
+                    <img src="/images/sword01.png" alt="Sword01">
+                <form>
+                    <input id="userName" type="text" placeholder="Email" autofocus>
+                    <input id="userPassword" type="password" placeholder="Password">
+                    <!-- <input id="showPass" type="checkbox" onclick="showPassword()"><label for="showPass">Show Password</label> -->
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="signup-link">
+                    <a class="signup" href="#">Don't have a account? Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <script src="/javascripts/login.js" async defer></script>
+    </body>
+</html>
