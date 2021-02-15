@@ -1,0 +1,109 @@
+:root {
+    --bg_main: #ECEADF;
+    --light-text: #919192;
+    --med_text: #5c5c5c;
+    --dark-text: #3F4043;
+    --Sand: #DFD4CA;
+    --Orange: #FE6726;
+    --DarkOrange: #da551d;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px, 100px;
+    grid-template-rows: "a b b" "a b b";
+    background-color: var(--Sand);
+    position: fixed;
+    height: 200px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: var(--med_text);
+}
+
+.header-container images {
+    grid-area: a;
+}
+
+.header-container banner {
+    grid-area: b;
+}
+
+.header-container img {
+    padding-top: 40px;
+    padding-left: 535px;
+    width: 100px;
+    height: 100px;
+}
+
+.header-container h1 {
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 64px;
+}
+
+.header-container p {
+    font-size: 32px;
+    margin-top: -60px;
+    margin-left: 55%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+    outline: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 2;
+    top: 200px;
+    left: 0;
+    background-color: var(--Sand);
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav button {
+    padding: 8px 20px 8px 23px;
+    margin-bottom: 30px;
+}
+
+.sidenav img {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+#navbar-collapse {
+    display: none;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 200px;
+    left: 100;
+    background-color: #d3c5b9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 1s;
+}
+
+#navbar-collapse .tab li {
+    margin: 15px 0;
+    list-style: none;
+}
+
+#navbar-collapse .tab li a {
+    font-size: 20px;
+    padding: 8px 8px 8px 90px;
+    text-decoration: none;
+    color: var(--dark-text);
+    transition: 1s;
+}
