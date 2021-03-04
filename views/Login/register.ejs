@@ -14,15 +14,15 @@
             <div class="validation-form">
                 <h1>Sign Up</h1>
                 <img src="/images/sword01.png" alt="Sword01">
-                <form>
-                    <input type="text" placeholder="Full Name" autofocus>
-                    <input type="text" placeholder="Email">
-                    <input type="password" placeholder="Password">
-                    <input id="reenter" type="password" placeholder="Re-enter Password">
+                <form action="/auth/register" method="POST">
+                    <input type="text" placeholder="Full Name" name="name" autofocus>
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Password">
+                    <input id="reenter" type="password" name="repeat_password" placeholder="Re-enter Password">
                     <button type="submit">Register</button>
                     
                     <div class="account-link">
-                        <a href="#">Already have an account? Log in</a>
+                        <a href="/auth/login">Already have an account? Log in</a>
                     </div>
                 </form>
             </div>

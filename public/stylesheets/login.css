@@ -21,7 +21,7 @@ button {
     cursor: pointer;
 }
 
-button, input[type="button"],[type="text"],[type="password"] {
+button, input[type="button"],[type="text"],[type="email"],[type="password"] {
     border: none;
     background: none;
     outline: none;
@@ -78,7 +78,7 @@ button, input[type="button"],[type="text"],[type="password"] {
     margin-bottom: 40px;
 }
 
-.validation-form form [type="text"] {
+.validation-form form [type="email"],[type="text"] {
     position: relative;
     display: block;
     margin: auto;

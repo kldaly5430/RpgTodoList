@@ -13,7 +13,9 @@ const registerValidation = data => {
             .email(),
         password: Joi.string()
             .min(8)
-            .required()
+            .pattern(new RegExp('^[a-zA-Z0-9!?@#%$&]{8,56}$'))
+            .required(),
+        repeat_password: Joi.ref('password')
     });
 
     return schema.validate(data);
@@ -23,9 +25,8 @@ const registerValidation = data => {
 const loginValidation = data => {
     const schema = Joi.object({
         email: Joi.string()
-            .min(6)
-            .required()
-            .email(),
+            .email({ tlds: { allow: false }})
+            .required(),
         password: Joi.string()
             .min(8)
             .required()

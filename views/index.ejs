@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/stylesheets/navigation.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <header>
         <%- include ('partials/header.ejs'); -%>
@@ -15,7 +16,19 @@
     <body>
         <%- include('partials/sideNav'); -%>
         <main>
-            
+            <div class="task-container">
+                <div class="taskView">
+                    <li class="task">
+                        <h2 class="task-name">Task Name</h2>
+                        <div class="task-description">
+                            <p>Task description goes here</p>
+                            <p>GOAL: 12/12/2021</p>
+                            <h6>Reward: 100 Exp</h6>
+                        </div>
+                        <input type="checkbox" class="completed"><p>COMPLETED</p>
+                    </li>
+                </div>
+            </div>
         </main>
         <script src="/javascripts/navigation.js" async defer></script>
     </body>

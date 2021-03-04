@@ -16,7 +16,7 @@ router.get('/register', function(req, res) {
 router.post('/register', async function(req, res) {
   //Validate user input
   const {error} = registerValidation(req.body);
-  if(error) return res.status(400).send(error.details[0].message);
+  if(error) res.status(400).send(error.details[0].message);
 
   //Check for duplicate users
   const emailExists = await User.findOne({email: req.body.email});
@@ -34,7 +34,7 @@ router.post('/register', async function(req, res) {
   });
   try{
     const savedUser = await user.save();
-    res.send({user: user.id});
+    res.redirect('/auth/Login');
   }catch(err){
     res.status(400).send(err);
   }
@@ -43,11 +43,15 @@ router.post('/register', async function(req, res) {
 router.post('/login', async function (req, res) {
   //Validate user input
   const {error} = loginValidation(req.body);
-  if(error) return res.status(400).send(error.details[0].message);
-
+  
+  if(error) {
+      res.status(400).send(error.details[0].message);
+  }
     //Check if user exists
     const user = await User.findOne({email: req.body.email});
-    if(!user) return res.status(400).send('Email or password is incorrect');
+    if(!user){
+      res.status(400).send('Email or password is incorrect');
+    }
 
     //Check if password if correct
     const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -55,9 +59,15 @@ router.post('/login', async function (req, res) {
 
     //Create and assign JWT
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
-    res.header('auth-token', token).send(token);
+    // res.header('auth-token', token).send(token);
+    res.cookie('auth-token', token, {maxAge: 432000, httpOnly: true});
 
-    res.send('logged in');
+    res.redirect('/');
 });
+
+router.get('/logout', function(req, res) {
+  res.clearCookie('auth-token');
+  res.redirect('/auth/login');
+})
 
 module.exports = router;

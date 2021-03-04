@@ -1,8 +1,23 @@
+:root {
+  --bg_main: #ECEADF;
+  --light-text: #919192;
+  --med_text: #5c5c5c;
+  --dark-text: #3F4043;
+  --Sand: #DFD4CA;
+  --Orange: #FE6726;
+  --DarkOrange: #da551d;
+}
+
 body {
-  padding: 50px;
+  background-color: var(--bg_main);
+  padding-top: 200px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+main {
+  padding-left: 150px;
 }
+
+/* .task-container {
+  
+} */
